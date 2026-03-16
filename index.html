@@ -464,6 +464,46 @@
   z-index:1000;
   }
 
+
+/* MOBILE DROPDOWN */
+.menu-toggle{
+display:none;
+font-size:28px;
+color:white;
+cursor:pointer;
+}
+
+/* MOBILE NAVBAR */
+@media (max-width:768px){
+
+.menu-toggle{
+display:block;
+}
+
+.nav-links{
+position:absolute;
+top:65px;
+right:0;
+background:#ff2f86;
+width:220px;
+flex-direction:column;
+align-items:flex-start;
+padding:20px;
+gap:15px;
+
+opacity:0;
+visibility:hidden;
+transform:translateY(-10px);
+transition:0.25s;
+}
+
+.nav-links.show{
+opacity:1;
+visibility:visible;
+transform:translateY(0);
+}
+
+}
   /* HOVER EFFECT (like menu cards) */
   .chat-btn:hover{
   transform:translateY(-6px) scale(1.08);
@@ -547,9 +587,10 @@
 
   </head>
   <script>
-  function toggleMenu(){
-  document.querySelector(".nav-links").classList.toggle("show");
-  }
+ 
+ function toggleMenu(){
+document.querySelector(".nav-links").classList.toggle("show");
+}
 
 
   function toggleDropdown(){
@@ -569,27 +610,31 @@
   <!-- NAVBAR -->
 
 
-  <div class="navbar">
-  <a href="#home" class="nav-logo">
-  <img src="https://scontent.fmnl17-1.fna.fbcdn.net/v/t39.30808-6/611162732_1281144360707996_8600646342482524756_n.jpg?_nc_cat=101&ccb=1-7&_nc_sid=1d70fc&_nc_eui2=AeEF_BjZPmHnY654PWZtI4F7A0vjNPvyMR0DS-M0-_IxHYJX9R6fqmeUYuRkCGm8cB-_DBKzxCoPru8FKNtPU63i&_nc_ohc=ENaClJ3F6HcQ7kNvwHcpATw&_nc_oc=AdmktqhTVpvjQhSa67wn_QCkmeg6i31q9begPkKHJs6iCQR3d5XJaewcWH4cYNSRs60&_nc_zt=23&_nc_ht=scontent.fmnl17-1.fna&_nc_gid=GSIaUZ2UpMiyzMyPRUoGPQ&_nc_ss=8&oh=00_Afw0_cfinr3xVPvTHrQendMg3ItKFzW55U0Kx4Gnzl94Cw&oe=69BC7996" class="logo">
-  <span> Cravings to Go </span>
-  </a>
-  <div class="nav-links">
-  <a href="#home">Home</a>
-  <div class="dropdown"> 
-  <a href="javascript:void(0)" onclick="toggleDropdown()">Menu ▾</a>
-  <div class="dropdown-content"> 
-  <a href="#SoftServeChurro">Soft Serve Churros</a>
-  <a href="#CChurros">Classic Churros </a>
-  <a href="#FrozenYogurt"> Frozen Yogurt</a>
-  <a href="#HotDrink"> Hot Drinks</a>
-  </div>
-  </div>
-  <a href="#contact">Contact</a>
-  <a href="https://www.foodpanda.ph/restaurant/fjnx/cravings-to-go-bf-resort-drive?gad_source=1&gad_campaignid=22756968177&gbraid=0AAAAADiVv6NNBdlhvG-KJsDL-4uflFAix&gclid=CjwKCAjw1N7NBhAoEiwAcPchp4-_PSEresUPfciUhshwAir8C68e3-XaYwNJMpLw_iNhIZa-AHYkTxoCtMAQAvD_BwE">Online Order</a>
-  </div>
+<div class="navbar">
 
-  </div>
+<a href="#home" class="nav-logo">
+<img src="https://scontent.fmnl17-1.fna.fbcdn.net/v/t39.30808-6/611162732_1281144360707996_8600646342482524756_n.jpg?_nc_cat=101&ccb=1-7&_nc_sid=1d70fc&_nc_eui2=AeEF_BjZPmHnY654PWZtI4F7A0vjNPvyMR0DS-M0-_IxHYJX9R6fqmeUYuRkCGm8cB-_DBKzxCoPru8FKNtPU63i&_nc_ohc=ENaClJ3F6HcQ7kNvwHcpATw&_nc_oc=AdmktqhTVpvjQhSa67wn_QCkmeg6i31q9begPkKHJs6iCQR3d5XJaewcWH4cYNSRs60&_nc_zt=23&_nc_ht=scontent.fmnl17-1.fna&_nc_gid=xq1I77ZwxvSPBLpqCllztg&_nc_ss=8&oh=00_AfzFafPnTAkWkPvwZLYFhS5jL5M2rlD_vPKva9cHZ4cLQw&oe=69BD92D6" class="logo">
+<span>Cravings To Go</span>
+</a>
+
+<div class="menu-toggle" onclick="toggleMenu()">☰</div>
+
+<div class="nav-links">
+<a href="#home">Home</a>
+<div class="dropdown">
+<a href="#menu">Menu ▾</a>
+<div class="dropdown-content">
+<a href="#SoftServeChurro">Soft Serve Churros</a>
+<a href="#CChurros">Classic Churros</a>
+<a href="#FrozenYogurt">Frozen Yogurt</a>
+<a href="#HotDrink">Hot Drinks</a>
+</div>
+</div>
+<a href="#contact">Contact</a>
+<a href="https://www.foodpanda.ph/restaurant/fjnx/cravings-to-go-bf-resort-drive?gad_source=1&gad_campaignid=22756968177&gbraid=0AAAAADiVv6NNBdlhvG-KJsDL-4uflFAix&gclid=CjwKCAjw1N7NBhAoEiwAcPchp4-_PSEresUPfciUhshwAir8C68e3-XaYwNJMpLw_iNhIZa-AHYkTxoCtMAQAvD_BwE">Online Order</a>
+</div>
+
+</div>
 
   <!-- HOME -->
 
