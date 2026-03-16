@@ -1,0 +1,829 @@
+\<!DOCTYPE html>
+
+<html>
+
+<head>
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;600&display=swap" rel="stylesheet">
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Cravings To Go</title>
+
+
+<link rel="icon" href="https://scontent.fmnl17-1.fna.fbcdn.net/v/t39.30808-6/611162732_1281144360707996_8600646342482524756_n.jpg?_nc_cat=101&ccb=1-7&_nc_sid=1d70fc&_nc_eui2=AeEF_BjZPmHnY654PWZtI4F7A0vjNPvyMR0DS-M0-_IxHYJX9R6fqmeUYuRkCGm8cB-_DBKzxCoPru8FKNtPU63i&_nc_ohc=ENaClJ3F6HcQ7kNvwHcpATw&_nc_oc=AdmktqhTVpvjQhSa67wn_QCkmeg6i31q9begPkKHJs6iCQR3d5XJaewcWH4cYNSRs60&_nc_zt=23&_nc_ht=scontent.fmnl17-1.fna&_nc_gid=5bhSCQsgoRDL3q2svhQA4Q&_nc_ss=8&oh=00_AfxScBMvL1-vsXwNAle2ZmUDEBMapdbo238o6Vrn57Q2zA&oe=69BC7996">
+<link rel="apple-touch-icon" href="https://scontent.fmnl17-1.fna.fbcdn.net/v/t39.30808-6/611162732_1281144360707996_8600646342482524756_n.jpg?_nc_cat=101&ccb=1-7&_nc_sid=1d70fc&_nc_eui2=AeEF_BjZPmHnY654PWZtI4F7A0vjNPvyMR0DS-M0-_IxHYJX9R6fqmeUYuRkCGm8cB-_DBKzxCoPru8FKNtPU63i&_nc_ohc=ENaClJ3F6HcQ7kNvwHcpATw&_nc_oc=AdmktqhTVpvjQhSa67wn_QCkmeg6i31q9begPkKHJs6iCQR3d5XJaewcWH4cYNSRs60&_nc_zt=23&_nc_ht=scontent.fmnl17-1.fna&_nc_gid=5bhSCQsgoRDL3q2svhQA4Q&_nc_ss=8&oh=00_AfxScBMvL1-vsXwNAle2ZmUDEBMapdbo238o6Vrn57Q2zA&oe=69BC7996">
+
+<meta name="description" content="Cravings To Go — Soft Serve, Churros, Drinks and Snacks.">
+
+<meta property="og:title" content="Cravings To Go">
+<meta property="og:description" content="Cravings to Go - Soft Serve, Churros, Drinks and Snacks!">
+<meta property="og:image" content="https://scontent.fmnl17-1.fna.fbcdn.net/v/t39.30808-6/611162732_1281144360707996_8600646342482524756_n.jpg?_nc_cat=101&ccb=1-7&_nc_sid=1d70fc&_nc_eui2=AeEF_BjZPmHnY654PWZtI4F7A0vjNPvyMR0DS-M0-_IxHYJX9R6fqmeUYuRkCGm8cB-_DBKzxCoPru8FKNtPU63i&_nc_ohc=ENaClJ3F6HcQ7kNvwHcpATw&_nc_oc=AdmktqhTVpvjQhSa67wn_QCkmeg6i31q9begPkKHJs6iCQR3d5XJaewcWH4cYNSRs60&_nc_zt=23&_nc_ht=scontent.fmnl17-1.fna&_nc_gid=5bhSCQsgoRDL3q2svhQA4Q&_nc_ss=8&oh=00_AfxScBMvL1-vsXwNAle2ZmUDEBMapdbo238o6Vrn57Q2zA&oe=69BC7996">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://hannieldcbusinessacc.github.io/CravingsToGo/">
+
+<style>
+/* GLOBAL */
+
+*{
+box-sizing:border-box;
+}
+
+html{
+scroll-behavior:smooth;
+}
+
+body{
+margin:0;
+font-family:"Roboto",Arial,sans-serif;
+background:#fff4e8;
+}
+
+/* HEADINGS */
+
+h1{
+font-family: 'Fredoka', sans-serif;
+letter-spacing:1px;
+text-transform:uppercase;
+font-size:clamp(28px,4vw,46px);
+color: white;
+}
+
+h2{
+font-family: 'Fredoka', sans-serif;
+font-size:clamp(24px,3vw,34px);
+margin-bottom:20px;
+color: white;
+}
+
+h3{
+font-family: 'Fredoka', sans-serif;
+font-size:20px;
+color: white; 
+}
+
+/* NAVBAR */
+
+.navbar{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:65px;
+background:#ff2f86;
+display:flex;
+justify-content: space-between;
+align-items:center;
+padding:0 40px;
+box-shadow:0 4px 10px rgba(0,0,0,0.2);
+z-index:1000;
+}
+
+.nav-links{
+display:flex;
+gap:40px;
+align-items:center;
+}
+
+.nav-links a{
+font-family: 'Fredoka', sans-serif;
+color:white;
+text-decoration:none;
+font-size:18px;
+letter-spacing:1px;
+transition:.2s;
+}
+
+
+.nav-logo{
+display:flex;
+align-items:center;
+gap:10px;
+color:white;
+text-decoration:none;
+font-family:"Oswald";
+font-size:20px;
+}
+
+.logo{
+width:40px;
+height:40px;
+border-radius:50%;
+object-fit:cover;
+align-items: left;
+}
+
+.nav-links{
+display:flex;
+gap:40px;
+align-items:center;
+}
+
+.nav-links a:hover{
+color:#ffe6f2;
+}
+
+/* HERO */
+/* Ensure parent is relative for ::before to work */
+#home {
+  position: relative;
+  min-height: 100vh;
+  padding: 110px 20px 60px 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+
+  /* Your hero background with gradient overlay */
+  background: linear-gradient(rgba(255,47,134,0.85), rgba(255,47,134,0.85)),
+              url("https://scontent.fmnl17-1.fna.fbcdn.net/v/t39.30808-6/611550921_1281150910707341_468585213132234199_n.jpg?_nc_cat=100&ccb=1-7&_nc_sid=2a1932&_nc_eui2=AeEwdviRvH3zK5njrgYMJHnr3dFI3olctgHd0UjeiVy2ASs_JDPjKLvdVnhmE8ASFuSLge8a7XverinPx7tWgz2_&_nc_ohc=UqwWFfE5_9UQ7kNvwH-cNiT&_nc_oc=AdmJ4yDEdbpF8yUmrv4_fEB4FAaLOjK9OeOGx_9aWNhhQaOeM8AXx48g6wj_qDjMUNM&_nc_zt=23&_nc_ht=scontent.fmnl17-1.fna&_nc_gid=vUi_T7y1QQM1jktnOsL_Vg&_nc_ss=8&oh=00_Afw2LJ5RNLON0JbVakPZyRMrmIpZupAO6HzVeUdy3v1YVg&oe=69BC7BF6");
+  background-size: cover;
+  background-position: center;
+}
+
+/* Table glow overlay */
+#home::before {
+  content: "";
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: linear-gradient(
+    120deg,
+    transparent 30%,
+    rgba(255, 255, 255, 0.08) 50%,
+    transparent 70%
+  );
+  animation: tableGlow 8s linear infinite;
+  pointer-events: none;
+  z-index: 1;
+}
+
+@keyframes tableGlow {
+  0% {
+    transform: translateX(-50%) translateY(-50%) rotate(0deg);
+  }
+  100% {
+    transform: translateX(50%) translateY(50%) rotate(360deg);
+  }
+}
+
+.hero-content{
+max-width:800px;
+color:white;
+}
+
+.informationbox{
+background:rgba(255,255,255,0.1);
+border-radius:15px;
+padding:clamp(20px,4vw,35px);
+box-shadow:0 10px 30px rgba(0,0,0,0.3);
+color: white;
+backdrop-filter:blur(6px);
+}
+
+/* SECTIONS */
+
+section{
+padding:80px 20px;
+border-bottom:1px solid rgba(0,0,0,0.08);
+}
+
+section{
+animation:fadeIn 0.8s ease;
+}
+
+@keyframes fadeIn{
+from{
+opacity:0;
+transform:translateY(20px);
+}
+to{
+opacity:1;
+transform:translateY(0);
+}
+}
+
+.content{
+max-width:1100px;
+margin:auto;
+text-align:center;
+}
+
+/* MENU  */
+
+#menu {
+background:
+linear-gradient(rgba(245, 243, 244, 0.85),rgba(245, 243, 244, 0.85)),
+url("https://scontent.fmnl17-3.fna.fbcdn.net/v/t39.30808-6/649281739_1335353751953723_6868638468936275702_n.jpg?stp=cp6_dst-jpg_tt6&_nc_cat=106&ccb=1-7&_nc_sid=7b2446&_nc_eui2=AeF0s_igRfneBC2iuhMYEKXAirHps6uBmwOKsemzq4GbAzbmQkT6MCdi8sdQ6qHz4V_O9sPSC-ixPcq9yLXIJb1q&_nc_ohc=41WJ_UnUdf0Q7kNvwHZHm1D&_nc_oc=AdnVJE8AK1Dk16Qj1Hw-OOtqaLw2HRZlzTfqUjeQhh68HPoCM22q5mFYm95HQoVCd5Q&_nc_zt=23&_nc_ht=scontent.fmnl17-3.fna&_nc_gid=YrekH1xQbCJVMyXib0MAfQ&_nc_ss=8&oh=00_Afz7y76Fmt4m7Jpf0nwzkWwuZmCwyaRJWgFuWJKrpH_J_w&oe=69BC709B");
+}
+
+.menu-title{
+font-family: 'Fredoka', sans-serif;
+font-weight: bold;
+font-size:clamp(24px,3vw,34px);
+text-align:center;
+color: #ff2f86;
+margin-bottom:25px;
+position:relative;
+}
+
+.badge{
+background:#ffe066;
+color:#333;
+padding:3px 8px;
+border-radius:6px;
+font-size:12px;
+margin-left:5px;
+}
+
+
+/* CARD GRID */
+
+.subject-card-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+gap:25px;
+margin-top:40px;
+}
+
+/* CARD STYLE */
+
+.subject-card{
+background:#ff2f86;
+color:white;
+border-radius:15px;
+padding:25px;
+box-shadow:0 10px 25px rgba(0,0,0,0.2);
+transition:.25s;
+cursor:pointer;
+opacity:0;
+transform:translateY(30px);
+animation:fadeUp .6s forwards;
+}
+@keyframes fadeUp{
+to{
+opacity:1;
+transform:translateY(0);
+}
+}
+
+
+.subject-card:hover{
+transform:translateY(-6px) scale(1.03);
+background:#ff5aa3;
+box-shadow:0 10px 30px rgba(255,47,134,0.5);
+}
+
+.price{
+font-family:"Oswald";
+font-size:22px;
+margin-top:5px;
+}
+
+/* CONTACT */
+
+#contact{
+background:
+linear-gradient(rgba(255,47,134,0.85),rgba(255,47,134,0.85)),
+url("https://scontent.fmnl17-3.fna.fbcdn.net/v/t39.30808-6/649281739_1335353751953723_6868638468936275702_n.jpg?stp=cp6_dst-jpg_tt6&_nc_cat=106&ccb=1-7&_nc_sid=7b2446&_nc_eui2=AeF0s_igRfneBC2iuhMYEKXAirHps6uBmwOKsemzq4GbAzbmQkT6MCdi8sdQ6qHz4V_O9sPSC-ixPcq9yLXIJb1q&_nc_ohc=41WJ_UnUdf0Q7kNvwHZHm1D&_nc_oc=AdnVJE8AK1Dk16Qj1Hw-OOtqaLw2HRZlzTfqUjeQhh68HPoCM22q5mFYm95HQoVCd5Q&_nc_zt=23&_nc_ht=scontent.fmnl17-3.fna&_nc_gid=YrekH1xQbCJVMyXib0MAfQ&_nc_ss=8&oh=00_Afz7y76Fmt4m7Jpf0nwzkWwuZmCwyaRJWgFuWJKrpH_J_w&oe=69BC709B");
+
+background-size:cover;
+background-position:center;
+color:white;
+}
+
+#contact .subject-card{
+background:rgba(255,255,255,0.15);
+backdrop-filter:blur(10px);
+border:1px solid rgba(255,255,255,0.25);
+color:white;
+}
+
+
+
+
+/* MAP */
+
+.map-container{
+margin-top:15px;
+width:100%;
+height:250px;
+border-radius:10px;
+overflow:hidden;
+}
+
+.map-container iframe{
+width:100%;
+height:100%;
+border:0;
+}
+
+/* SOCIAL */
+
+.social-icon{
+width:55px;
+margin-top:10px;
+transition:.2s;
+}
+
+.social-icon:hover{
+transform:scale(1.1);
+}
+
+/* MOBILE */
+
+@media(max-width:600px){
+
+.navbar{
+height:auto;
+padding:12px;
+}
+
+.nav-scrolled{
+box-shadow:0 6px 20px rgba(0,0,0,0.35);
+background:#ff2f86;
+}
+
+.nav-links{
+gap:20px;
+flex-wrap:wrap;
+}
+
+section{
+padding:70px 15px;
+}
+
+}
+
+.dropdown{
+position:relative;
+display:flex;
+align-items:center;
+}
+
+.dropdown-content{
+position:absolute;
+top:40px;
+left:0;
+background:white;
+border-radius:8px;
+box-shadow:0 6px 18px rgba(0,0,0,0.25);
+border-top:4px solid #ff2f86;
+min-width:200px;
+
+opacity:0;
+visibility:hidden;
+transform:translateY(10px);
+transition:0.25s ease;
+z-index:1000;
+  max-width: 90vw;
+}
+
+.dropdown-content a{
+display:block;
+padding:10px 15px;
+color: #ff2f86;
+text-decoration:none;
+font-family:"Oswald";
+font-size:14px;
+transition:0.2s;
+}
+
+.dropdown-content a:hover{
+background:#f1e4d6;
+}
+
+.dropdown:hover .dropdown-content{
+opacity:1;
+visibility:visible;
+transform:translateY(0);
+}
+
+.menu-toggle{
+display:none;
+font-size:26px;
+color:white;
+cursor:pointer;
+}
+
+
+.hours-image{
+width:100%;
+max-width:300px;
+margin-top:10px;
+border-radius:8px;
+}
+
+.socmed{
+width:100%;
+max-width:200x;
+margin-top:10px;
+border-radius:8px;
+}
+
+
+/* MENU PICTURES */
+.food-img{
+width:100%;
+height:150px;
+object-fit:cover;
+border-radius:10px;
+margin-bottom:10px;
+}
+
+/* FOOTER */
+footer{
+background:#ff2f86;
+color:white;
+text-align:center;
+padding:25px;
+font-size:14px;
+font-family: 'Fredoka', sans-serif;
+}
+
+
+/* ORDER BUTTON */ 
+.chat-btn{
+position:fixed;
+bottom:20px;
+right:20px;
+background:#ff2f86;
+color:white;
+font-size:22px;
+width:55px;
+height:55px;
+border-radius:50%;
+display:flex;
+align-items:center;
+justify-content:center;
+text-decoration:none;
+box-shadow:0 6px 20px rgba(0,0,0,0.25);
+z-index:1000;
+}
+
+/* HOVER EFFECT (like menu cards) */
+.chat-btn:hover{
+transform:translateY(-6px) scale(1.08);
+background:#ff5aa3;
+box-shadow:0 10px 30px rgba(255,47,134,0.5);
+}
+
+
+@keyframes floatButton{
+0%{ transform:translateY(0); }
+50%{ transform:translateY(-4px); }
+100%{ transform:translateY(0); }
+}
+
+.chat-btn{
+animation:floatButton 3s ease-in-out infinite;
+}
+
+
+/* MOBILE MEDIA QUERY */
+/* MOBILE / TABLET NAVBAR LEFT-RIGHT LAYOUT */
+@media (max-width:900px){
+  .nav-links{
+    justify-content: flex-start; /* keep left-to-right alignment */
+    gap: clamp(10px, 4vw, 25px); /* smaller gap for smaller screens */
+    flex-wrap: wrap; /* allow wrapping if needed */
+  }
+
+  .nav-links a{
+    font-size: clamp(14px, 2vw, 16px); /* shrink font for mobile */
+  }
+
+  .navbar{
+    padding: clamp(8px, 3vw, 15px); /* adjust navbar padding */
+    flex-wrap: nowrap; /* keep logo + links on one line */
+  }
+}
+
+  .dropdown-content {
+    left: auto;
+    right: 0; /* align right to prevent cutoff */
+    min-width: 180px; /* slightly smaller on mobile */
+    font-size: 13px;
+      overflow:hidden;
+  }
+  
+/* SMALLER MOBILE (under 600px) */
+@media (max-width:600px){
+  .nav-links{
+    gap: clamp(8px, 3vw, 15px);
+  }
+
+  .navbar{
+    padding: clamp(6px, 3vw, 12px);
+  }
+
+  .nav-logo{
+    font-size: clamp(16px, 4vw, 18px); /* logo text shrinks slightly */
+  }
+}
+
+html, body{
+  overflow-x: hidden;
+  max-width: 100%;
+}
+
+img, iframe{
+  max-width:100%;
+  height:auto;
+}
+
+.show-dropdown{
+  opacity:1;
+  visibility:visible;
+  transform:translateY(0);
+}
+
+</style>
+
+
+
+</head>
+<script>
+function toggleMenu(){
+document.querySelector(".nav-links").classList.toggle("show");
+}
+
+
+function toggleDropdown(){
+  const dropdown = document.querySelector(".dropdown-content");
+  dropdown.classList.toggle("show-dropdown");
+}
+
+
+window.addEventListener("scroll", function(){
+document.querySelector(".navbar").classList.toggle("nav-scrolled", window.scrollY > 50);
+});
+
+</script>
+
+<body>
+
+<!-- NAVBAR -->
+
+
+<div class="navbar">
+<a href="#home" class="nav-logo">
+<img src="https://scontent.fmnl17-1.fna.fbcdn.net/v/t39.30808-6/611162732_1281144360707996_8600646342482524756_n.jpg?_nc_cat=101&ccb=1-7&_nc_sid=1d70fc&_nc_eui2=AeEF_BjZPmHnY654PWZtI4F7A0vjNPvyMR0DS-M0-_IxHYJX9R6fqmeUYuRkCGm8cB-_DBKzxCoPru8FKNtPU63i&_nc_ohc=ENaClJ3F6HcQ7kNvwHcpATw&_nc_oc=AdmktqhTVpvjQhSa67wn_QCkmeg6i31q9begPkKHJs6iCQR3d5XJaewcWH4cYNSRs60&_nc_zt=23&_nc_ht=scontent.fmnl17-1.fna&_nc_gid=GSIaUZ2UpMiyzMyPRUoGPQ&_nc_ss=8&oh=00_Afw0_cfinr3xVPvTHrQendMg3ItKFzW55U0Kx4Gnzl94Cw&oe=69BC7996" class="logo">
+<span> Cravings to Go </span>
+</a>
+<div class="nav-links">
+<a href="#home">Home</a>
+<div class="dropdown"> 
+<a href="javascript:void(0)" onclick="toggleDropdown()">Menu ▾</a>
+<div class="dropdown-content"> 
+<a href="#SoftServeChurro">Soft Serve Churros</a>
+<a href="#CChurros">Classic Churros </a>
+<a href="#FrozenYogurt"> Frozen Yogurt</a>
+<a href="#HotDrink"> Hot Drinks</a>
+</div>
+</div>
+<a href="#contact">Contact</a>
+
+</div>
+
+</div>
+
+<!-- HOME -->
+
+<section id="home">
+
+<div class="hero-content">
+
+<div class="informationbox">
+
+<h1>Cravings To Go</h1>
+
+<p>
+Fresh churros, frozen yogurt, and sweet desserts made to satisfy your cravings.
+Perfect treats for friends, family, and sweet moments.
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- MENU -->
+
+<section id="menu">
+
+<div class="content">
+
+<div class="menu-title" id="SoftServeChurro">Soft Serve Churros</div>
+<div class="subject-card-grid">
+
+<div class="subject-card">
+  <img src="https://images.deliveryhero.io/image/global-menu-service/FP_PH/vendor/fjnx/product/e4c64c2c-e51d-46f8-a984-67a7fb88a338.jpg?width=400" class="food-img">
+<h3> Tiramisu Churros </h3>
+<p> Vanilla Soft Serve Drizzled with Tiramisu Sauce</p>
+<div class="price">₱180</div>
+</div>
+
+<div class="subject-card"> 
+  <img src="https://images.deliveryhero.io/image/global-menu-service/FP_PH/vendor/fjnx/product/2164218e-3349-4875-9f9f-28a28ba7161b.jpg?width=400" class="food-img">
+<h3> Strawberry Cake </h3>
+<p> Vanilla Soft Serve Drizzled Strawberry Cake Icing</p>
+<div class="price">₱180</div>
+</div>
+
+<div class="subject-card"> 
+  <img src="https://images.deliveryhero.io/image/fd-ph/Products/75797224.jpg?width=400" class="food-img">
+<h3> Crunchy </h3>
+<p> Vanilla Soft Serve Drizzled with Crunchy Chocolate Sauce</p>
+<div class="price">₱180</div>
+</div>
+
+<div class="subject-card"> 
+  <img src="https://images.deliveryhero.io/image/fd-ph/Products/75797225.jpg?width=400" class="food-img">
+<h3> Biscoff Cookies Butter </h3>
+<p> Vanilla Soft Serve Drizzled with Biscoff Sauce and Cruncy Cookie Crumbs</p>
+<div class="price">₱180</div>
+</div>
+
+<div class="subject-card"> 
+  <img src="https://images.deliveryhero.io/image/fd-ph/Products/75797226.jpg?width=400" class="food-img">
+<h3> Cookies & Cream </h3>
+<p> Vanilla Soft Serve Drizzled with Cookies and Cream Sauce</p>
+<div class="price">₱180</div>
+</div>
+
+<div class="subject-card"> 
+  <img src="https://images.deliveryhero.io/image/fd-ph/products/75797227.jpg?width=400" class="food-img">
+<h3> Chocolate Peanut Butter </h3>
+<p> Vanilla Soft Serve Drizzled with Hazelnut Chocolate Sauce and Peanut Crumbs</p>
+<div class="price">₱180</div>
+</div>
+
+<div class="subject-card"> 
+  <img src="https://images.deliveryhero.io/image/fd-ph/Products/75797228.jpg?width=400" class="food-img">
+<h3> Nutella </h3>
+<p> Vanilla Soft Serve Drizzled with Nutella</p>
+<div class="price">₱180</div>
+</div>
+
+<div class="subject-card"> 
+  <img src="https://images.deliveryhero.io/image/fd-ph/Products/76283959.jpg?width=400" class="food-img">
+<h3> Matcha Cream </h3>
+<p> Vanilla Soft Serve Drizzled with Creamy Matcha Sauce</p>
+<div class="price">₱180</div>
+</div>
+
+
+</div>
+</div>
+<br> 
+
+<div class="content">
+<div class="menu-title" id="CChurros"> Classic Churros</div>
+<div class="subject-card-grid">
+
+
+<div class="subject-card"> 
+  <img src="https://images.deliveryhero.io/image/fd-ph/Products/76283946.jpg?width=400" class="food-img">
+<h3> Classic Churros</h3>
+<p> 4 Pieces Golden, Crispy outside, Soft and Fluffy Inside, Classic churros in a fun looped shape, dusted with cinnamon sugar</p>
+<div class="price">₱150</div>
+</div>
+
+
+<div class="subject-card"> 
+  <img src="https://images.deliveryhero.io/image/fd-ph/Products/75797236.jpg?width=400" class="food-img">
+<h3> Party Box Churros</h3>
+<p> 10 Pieces Golden, Crispy outside, Soft and Fluffy Inside, Classic churros in a fun looped shape, dusted with cinnamon sugar, with three delicious dips for extra fun!</p>
+<div class="price">₱345</div>
+</div>
+
+<div class="subject-card"> 
+  <img src="https://images.deliveryhero.io/image/fd-ph/Products/75797235.jpg?width=400" class="food-img">
+<h3> Premium Churros</h3>
+<p> 4 Pieces Churros, coated in rich sauce and loaded with delicious toppings, fun and flavorful in every bite!</p>
+<div class="price">₱175</div>
+</div>
+
+    </div>
+</div>
+
+
+<br>
+
+<div class="content">
+<div class="menu-title" id="FrozenYogurt">Frozen Yogurt</div>
+<div class="subject-card-grid">
+
+<div class="subject-card"> 
+  <img src="https://images.deliveryhero.io/image/fd-ph/Products/75797235.jpg?width=400" class="food-img">
+<h3> Frozen Yogurt 1 Topping</h3>
+<p> A healthy, guilt-free dessert! Smooth, creamy and perfectly balanced yogurt goodness in every spoonful!</p>
+<div class="price">₱160</div>
+</div>
+
+<div class="subject-card"> 
+  <img src="https://images.deliveryhero.io/image/fd-ph/Products/76283959.jpg?width=400" class="food-img">
+<h3> Frozen Yogurt 4 Toppings</h3>
+<p> A healthy, guilt-free dessert! Smooth, creamy and perfectly balanced yogurt goodness in every spoonful!</p>
+<div class="price">₱160</div>
+</div>
+
+</div>
+</div>
+
+<br>
+
+<div class="content">
+<div class="menu-title" id="HotDrink">Hot Drinks</div>
+<div class="subject-card-grid">
+
+<div class="subject-card"> 
+  <img src="https://images.deliveryhero.io/image/fd-ph/Products/75797242.jpg?width=400" class="food-img">
+<h3> Hot Milo</h3>
+<p> All time favorite comfort drink served hot and satisfying. Rich, malty and chocolatey</p>
+<div class="price">₱95</div>
+</div>
+
+<div class="subject-card"> 
+  <img src="https://images.deliveryhero.io/image/fd-ph/Products/76283807.jpg?width=400" class="food-img">
+<h3> Hot Chocolate </h3>
+<p> Hot creamy chocolate topped with soft, melty marshmallows.</p>
+<div class="price">₱95</div>
+</div>
+
+</div>
+</div>
+
+
+</div>
+
+</section>
+
+<!-- CONTACT -->
+
+<section id="contact">
+
+<div class="content">
+
+<h2>Visit Us</h2>
+
+<div class="subject-card-grid">
+
+<div class="subject-card">
+
+<h3>Location</h3>
+
+<p>JB Tan St. BF Resort Drive BF Resort Las Piñas City (In front of Athefhasan Shawarma) , Las Piñas, Philippines</p>
+
+<div class="map-container">
+
+<iframe src="https://www.google.com/maps/embed?pb=!4v1773578358841!6m8!1m7!1sBbEdFutBPc_144LMPzmNJw!2m2!1d14.43097326632042!2d120.9897448290475!3f101.32186588934681!4f-8.531139913415245!5f0.7820865974627469" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+
+</div>
+
+</div>
+
+<div class="subject-card">
+
+<h3>Facebook</h3>
+
+<p>Follow us for updates and promotions.</p>
+
+<a href="https://www.facebook.com/cravingsfortogo" target="_blank">
+
+<img src="https://upload.wikimedia.org/wikipedia/commons/5/51/Facebook_f_logo_%282019%29.svg" class="social-icon">
+<img src="https://scontent.fmnl17-1.fna.fbcdn.net/v/t39.30808-6/647585662_1331648255657606_3970463919818670477_n.jpg?_nc_cat=101&ccb=1-7&_nc_sid=7b2446&_nc_eui2=AeGfVtg0as_UbUCpezWQVo8QS4LY528LbMhLgtjnbwtsyKz07GYGxnoIKLwSLzqQqei4Zd1NIQP85FrauxJZrra-&_nc_ohc=35C69n83U-cQ7kNvwEIlSOK&_nc_oc=AdlLyvBUSYzuXraHmM9SWmtK_PWTiimS3q1p-6gVeCMOc-AI6gBxCLqzGy5J76kajA8&_nc_zt=23&_nc_ht=scontent.fmnl17-1.fna&_nc_gid=85AyGKzS6LKR6UTN_fOWsQ&_nc_ss=8&oh=00_AfwU7jGMwFhS79RUsd0pdh8iojR9HqGB00EjMexfjoXeqQ&oe=69BC85D8" class="socmed">
+</a>
+
+</div>
+
+<div class="subject-card">
+
+<h3>Opening Hours</h3>
+<p>10:00 AM - 12:00 Midnight</p>
+<img src="https://scontent.fmnl17-1.fna.fbcdn.net/v/t39.30808-6/648828316_1333898825432549_347270774343657187_n.jpg?stp=cp6_dst-jpg_tt6&_nc_cat=100&ccb=1-7&_nc_sid=7b2446&_nc_eui2=AeHOt3F69rkEHc0M8I9U9szJ89_5WBnWiHTz3_lYGdaIdHHz8no0XOpfYEeb9TNx-FaEao8N7kQCPdxq1kS19fLv&_nc_ohc=Q4zBwczZl-cQ7kNvwEEB4bs&_nc_oc=Adksev-ywsxFfdS-TSMlFiGHgViMy-ZYKANSNzkFKR9ZbrupE8D05bIg5O5U_QPmex0&_nc_zt=23&_nc_ht=scontent.fmnl17-1.fna&_nc_gid=f5D60XTfwYxic-xecD5jZg&_nc_ss=8&oh=00_Afx8p_g912wia3ajaTf30wTL1w_5W6_fNf7bwHSjsIis8g&oe=69BC6BD5" class="hours-image"> 
+</div>
+</div>
+
+</div>
+
+</section>
+
+<a href="https://www.facebook.com/cravingsfortogo" class="chat-btn" target="_blank">
+💬
+</a>
+
+
+<footer>
+<p>© 2026 Cravings To Go</p>
+<p>Las Piñas City • Philippines</p>
+</footer>
+
+</body>
+
+</html>
