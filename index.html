@@ -5,15 +5,15 @@
   <head>
 
     
-  <link rel="icon" href="https://scontent.fmnl17-1.fna.fbcdn.net/v/t39.30808-6/611162732_1281144360707996_8600646342482524756_n.jpg?_nc_cat=101&ccb=1-7&_nc_sid=1d70fc&_nc_eui2=AeEF_BjZPmHnY654PWZtI4F7A0vjNPvyMR0DS-M0-_IxHYJX9R6fqmeUYuRkCGm8cB-_DBKzxCoPru8FKNtPU63i&_nc_ohc=ENaClJ3F6HcQ7kNvwHcpATw&_nc_oc=AdmktqhTVpvjQhSa67wn_QCkmeg6i31q9begPkKHJs6iCQR3d5XJaewcWH4cYNSRs60&_nc_zt=23&_nc_ht=scontent.fmnl17-1.fna&_nc_gid=xq1I77ZwxvSPBLpqCllztg&_nc_ss=8&oh=00_AfzFafPnTAkWkPvwZLYFhS5jL5M2rlD_vPKva9cHZ4cLQw&oe=69BD92D6">
-  <link rel="apple-touch-icon" href="https://scontent.fmnl17-1.fna.fbcdn.net/v/t39.30808-6/611162732_1281144360707996_8600646342482524756_n.jpg?_nc_cat=101&ccb=1-7&_nc_sid=1d70fc&_nc_eui2=AeEF_BjZPmHnY654PWZtI4F7A0vjNPvyMR0DS-M0-_IxHYJX9R6fqmeUYuRkCGm8cB-_DBKzxCoPru8FKNtPU63i&_nc_ohc=ENaClJ3F6HcQ7kNvwHcpATw&_nc_oc=AdmktqhTVpvjQhSa67wn_QCkmeg6i31q9begPkKHJs6iCQR3d5XJaewcWH4cYNSRs60&_nc_zt=23&_nc_ht=scontent.fmnl17-1.fna&_nc_gid=xq1I77ZwxvSPBLpqCllztg&_nc_ss=8&oh=00_AfzFafPnTAkWkPvwZLYFhS5jL5M2rlD_vPKva9cHZ4cLQw&oe=69BD92D6">
+  <link rel="icon" type="image/jpg" href="CTG.jpg">
+  <link rel="apple-touch-icon" href="CTG.jpg">
 
   <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;600&display=swap" rel="stylesheet">
 
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  
+
    <meta name="description" content="Cravings To Go — Soft Serve, Churros, Drinks and Snacks.">
   <meta property="og:title" content="Cravings To Go">
   <meta property="og:description" content="Cravings to Go - Soft Serve, Churros, Drinks and Snacks!">
@@ -524,6 +524,19 @@ transform:translateY(0);
   }
 
 
+  /* SCROLL ANIMATIONS */
+  .reveal{
+opacity:0;
+transform:translateY(40px);
+transition:all .8s ease;
+}
+
+.reveal.active{
+opacity:1;
+transform:translateY(0);
+}
+
+
   /* MOBILE MEDIA QUERY */
   /* MOBILE / TABLET NAVBAR LEFT-RIGHT LAYOUT */
   @media (max-width:900px){
@@ -582,6 +595,34 @@ transform:translateY(0);
     transform:translateY(0);
   }
 
+
+
+  /* ANIMATED DESERT */
+  .hero-dessert{
+width:260px;
+position:absolute;
+right:8%;
+top:50%;
+transform:translateY(-50%);
+animation:floatDessert 4s ease-in-out infinite;
+}
+
+@keyframes floatDessert{
+
+0%{
+transform:translateY(-50%) translateY(0);
+}
+
+50%{
+transform:translateY(-50%) translateY(-15px);
+}
+
+100%{
+transform:translateY(-50%) translateY(0);
+}
+
+}
+
   </style>
 
 
@@ -603,6 +644,27 @@ document.querySelector(".nav-links").classList.toggle("show");
   window.addEventListener("scroll", function(){
   document.querySelector(".navbar").classList.toggle("nav-scrolled", window.scrollY > 50);
   });
+
+
+function revealOnScroll(){
+
+let reveals = document.querySelectorAll(".reveal");
+
+for(let i = 0; i < reveals.length; i++){
+
+let windowHeight = window.innerHeight;
+let elementTop = reveals[i].getBoundingClientRect().top;
+let revealPoint = 120;
+
+if(elementTop < windowHeight - revealPoint){
+reveals[i].classList.add("active");
+}
+
+}
+
+}
+
+window.addEventListener("scroll", revealOnScroll);
 
   </script>
 
@@ -639,8 +701,8 @@ document.querySelector(".nav-links").classList.toggle("show");
 
   <!-- HOME -->
 
-  <section id="home">
-
+  <section id="home" class="reveal">
+<img src="CTGBG.png" class="hero-dessert">
   <div class="hero-content">
 
   <div class="informationbox">
@@ -660,7 +722,7 @@ document.querySelector(".nav-links").classList.toggle("show");
 
   <!-- MENU -->
 
-  <section id="menu">
+  <section id="menu" class="reveal">
 
   <div class="content">
 
@@ -668,56 +730,56 @@ document.querySelector(".nav-links").classList.toggle("show");
   <div class="subject-card-grid">
 
   <div class="subject-card">
-    <img src="https://images.deliveryhero.io/image/global-menu-service/FP_PH/vendor/fjnx/product/e4c64c2c-e51d-46f8-a984-67a7fb88a338.jpg?width=400" class="food-img">
+    <img src="https://images.deliveryhero.io/image/global-menu-service/FP_PH/vendor/fjnx/product/e4c64c2c-e51d-46f8-a984-67a7fb88a338.jpg?width=400" class="food-img" loading="lazy">
   <h3> Tiramisu Churros </h3>
   <p> Vanilla Soft Serve Drizzled with Tiramisu Sauce</p>
   <div class="price">₱180</div>
   </div>
 
   <div class="subject-card"> 
-    <img src="https://images.deliveryhero.io/image/global-menu-service/FP_PH/vendor/fjnx/product/2164218e-3349-4875-9f9f-28a28ba7161b.jpg?width=400" class="food-img">
+    <img src="https://images.deliveryhero.io/image/global-menu-service/FP_PH/vendor/fjnx/product/2164218e-3349-4875-9f9f-28a28ba7161b.jpg?width=400" class="food-img" loading="lazy">
   <h3> Strawberry Cake </h3>
   <p> Vanilla Soft Serve Drizzled Strawberry Cake Icing</p>
   <div class="price">₱180</div>
   </div>
 
   <div class="subject-card"> 
-    <img src="https://images.deliveryhero.io/image/fd-ph/Products/75797224.jpg?width=400" class="food-img">
+    <img src="https://images.deliveryhero.io/image/fd-ph/Products/75797224.jpg?width=400" class="food-img" loading="lazy">
   <h3> Crunchy </h3>
   <p> Vanilla Soft Serve Drizzled with Crunchy Chocolate Sauce</p>
   <div class="price">₱180</div>
   </div>
 
   <div class="subject-card"> 
-    <img src="https://images.deliveryhero.io/image/fd-ph/Products/75797225.jpg?width=400" class="food-img">
+    <img src="https://images.deliveryhero.io/image/fd-ph/Products/75797225.jpg?width=400" class="food-img" loading="lazy">
   <h3> Biscoff Cookies Butter </h3>
   <p> Vanilla Soft Serve Drizzled with Biscoff Sauce and Cruncy Cookie Crumbs</p>
   <div class="price">₱180</div>
   </div>
 
   <div class="subject-card"> 
-    <img src="https://images.deliveryhero.io/image/fd-ph/Products/75797226.jpg?width=400" class="food-img">
+    <img src="https://images.deliveryhero.io/image/fd-ph/Products/75797226.jpg?width=400" class="food-img" loading="lazy">
   <h3> Cookies & Cream </h3>
   <p> Vanilla Soft Serve Drizzled with Cookies and Cream Sauce</p>
   <div class="price">₱180</div>
   </div>
 
   <div class="subject-card"> 
-    <img src="https://images.deliveryhero.io/image/fd-ph/products/75797227.jpg?width=400" class="food-img">
+    <img src="https://images.deliveryhero.io/image/fd-ph/products/75797227.jpg?width=400" class="food-img" loading="lazy">
   <h3> Chocolate Peanut Butter </h3>
   <p> Vanilla Soft Serve Drizzled with Hazelnut Chocolate Sauce and Peanut Crumbs</p>
   <div class="price">₱180</div>
   </div>
 
   <div class="subject-card"> 
-    <img src="https://images.deliveryhero.io/image/fd-ph/Products/75797228.jpg?width=400" class="food-img">
+    <img src="https://images.deliveryhero.io/image/fd-ph/Products/75797228.jpg?width=400" class="food-img" loading="lazy">
   <h3> Nutella </h3>
   <p> Vanilla Soft Serve Drizzled with Nutella</p>
   <div class="price">₱180</div>
   </div>
 
   <div class="subject-card"> 
-    <img src="https://images.deliveryhero.io/image/fd-ph/Products/76283959.jpg?width=400" class="food-img">
+    <img src="https://images.deliveryhero.io/image/fd-ph/Products/76283959.jpg?width=400" class="food-img" loading="lazy">
   <h3> Matcha Cream </h3>
   <p> Vanilla Soft Serve Drizzled with Creamy Matcha Sauce</p>
   <div class="price">₱180</div>
@@ -728,13 +790,13 @@ document.querySelector(".nav-links").classList.toggle("show");
   </div>
   <br> 
 
-  <div class="content">
+  <div class="content" class="reveal">
   <div class="menu-title" id="CChurros"> Classic Churros</div>
   <div class="subject-card-grid">
 
 
   <div class="subject-card"> 
-    <img src="https://images.deliveryhero.io/image/fd-ph/Products/76283946.jpg?width=400" class="food-img">
+    <img src="https://images.deliveryhero.io/image/fd-ph/Products/76283946.jpg?width=400" class="food-img" loading="lazy">
   <h3> Classic Churros</h3>
   <p> 4 Pieces Golden, Crispy outside, Soft and Fluffy Inside, Classic churros in a fun looped shape, dusted with cinnamon sugar</p>
   <div class="price">₱150</div>
@@ -742,14 +804,14 @@ document.querySelector(".nav-links").classList.toggle("show");
 
 
   <div class="subject-card"> 
-    <img src="https://images.deliveryhero.io/image/fd-ph/Products/75797236.jpg?width=400" class="food-img">
+    <img src="https://images.deliveryhero.io/image/fd-ph/Products/75797236.jpg?width=400" class="food-img" loading="lazy">
   <h3> Party Box Churros</h3>
   <p> 10 Pieces Golden, Crispy outside, Soft and Fluffy Inside, Classic churros in a fun looped shape, dusted with cinnamon sugar, with three delicious dips for extra fun!</p>
   <div class="price">₱345</div>
   </div>
 
   <div class="subject-card"> 
-    <img src="https://images.deliveryhero.io/image/fd-ph/Products/75797235.jpg?width=400" class="food-img">
+    <img src="https://images.deliveryhero.io/image/fd-ph/Products/75797235.jpg?width=400" class="food-img" loading="lazy">
   <h3> Premium Churros</h3>
   <p> 4 Pieces Churros, coated in rich sauce and loaded with delicious toppings, fun and flavorful in every bite!</p>
   <div class="price">₱175</div>
@@ -766,14 +828,14 @@ document.querySelector(".nav-links").classList.toggle("show");
   <div class="subject-card-grid">
 
   <div class="subject-card"> 
-    <img src="https://images.deliveryhero.io/image/fd-ph/Products/75797235.jpg?width=400" class="food-img">
+    <img src="https://images.deliveryhero.io/image/fd-ph/Products/75797235.jpg?width=400" class="food-img" loading="lazy">
   <h3> Frozen Yogurt 1 Topping</h3>
   <p> A healthy, guilt-free dessert! Smooth, creamy and perfectly balanced yogurt goodness in every spoonful!</p>
   <div class="price">₱160</div>
   </div>
 
   <div class="subject-card"> 
-    <img src="https://images.deliveryhero.io/image/fd-ph/Products/76283959.jpg?width=400" class="food-img">
+    <img src="https://images.deliveryhero.io/image/fd-ph/Products/76283959.jpg?width=400" class="food-img" loading="lazy">
   <h3> Frozen Yogurt 4 Toppings</h3>
   <p> A healthy, guilt-free dessert! Smooth, creamy and perfectly balanced yogurt goodness in every spoonful!</p>
   <div class="price">₱160</div>
@@ -789,14 +851,14 @@ document.querySelector(".nav-links").classList.toggle("show");
   <div class="subject-card-grid">
 
   <div class="subject-card"> 
-    <img src="https://images.deliveryhero.io/image/fd-ph/Products/75797242.jpg?width=400" class="food-img">
+    <img src="https://images.deliveryhero.io/image/fd-ph/Products/75797242.jpg?width=400" class="food-img" loading="lazy">
   <h3> Hot Milo</h3>
   <p> All time favorite comfort drink served hot and satisfying. Rich, malty and chocolatey</p>
   <div class="price">₱95</div>
   </div>
 
   <div class="subject-card"> 
-    <img src="https://images.deliveryhero.io/image/fd-ph/Products/76283807.jpg?width=400" class="food-img">
+    <img src="https://images.deliveryhero.io/image/fd-ph/Products/76283807.jpg?width=400" class="food-img" loading="lazy">
   <h3> Hot Chocolate </h3>
   <p> Hot creamy chocolate topped with soft, melty marshmallows.</p>
   <div class="price">₱95</div>
