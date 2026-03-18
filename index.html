@@ -737,6 +737,32 @@ window.addEventListener("load", () => {
   }, 1800); // 🔥 change this (1500–2500 ideal)
 
 });
+
+    /* LOADING TEXT */
+.loader-text{
+  margin-top:15px;
+  font-family:'Fredoka', sans-serif;
+  font-size:16px;
+  color:#444;
+  letter-spacing:0.5px;
+  animation:fadeText 1.5s ease-in-out infinite;
+}
+
+/* BRAND NAME */
+.loader-brand{
+  font-family:'Oswald', sans-serif;
+  font-size:14px;
+  color:#ff2f86;
+  margin-top:5px;
+  letter-spacing:2px;
+}
+
+/* TEXT FADE ANIMATION */
+@keyframes fadeText{
+  0%,100%{ opacity:0.4; }
+  50%{ opacity:1; }
+}
+    
     
   </script>
 
@@ -746,6 +772,11 @@ window.addEventListener("load", () => {
     🍦
   </div>
   <div class="drip"></div>
+  <div class="drip"></div>
+  <div class="drip"></div>
+
+  <p class="loader-text"> Cravings To Go is getting ready.. 🍓</p>
+  <span class="loader-brand">Cravings To Go</span>
 </div>
 
     
