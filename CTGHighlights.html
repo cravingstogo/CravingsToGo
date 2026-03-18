@@ -12,8 +12,6 @@
 
 <title>Highlights - Cravings To Go</title>
 
-<link rel="stylesheet" href="style.css">
-
 <style>
 /* GLOBAL */
 *{
@@ -96,7 +94,7 @@ section{
 
   background:
     linear-gradient(rgba(245,243,244,0.9), rgba(245,243,244,0.9)),
-    url("https://scontent.fmnl17-8.fna.fbcdn.net/v/t39.30808-6/653710890_1339243471564751_1382818684277726793_n.jpg?stp=cp6_dst-jpg_tt6&_nc_cat=107&ccb=1-7&_nc_sid=7b2446&_nc_eui2=AeGRIZJ51eY3TLJFqLRCW2zP5XDotdvE8ZvlcOi128Txm8vHdP0_Z-HS5pvQtE0oYDGnrQeI79FBmrNtJBf0xQrB&_nc_ohc=sTlp5crwfs0Q7kNvwHFRccu&_nc_oc=Adk-ko2KjBFHjSQNTm8XPoPuBaCxWo89E9SBqlD_te2Piujmsa2X05X58ajQ5wnFh4U&_nc_zt=23&_nc_ht=scontent.fmnl17-8.fna&_nc_gid=7yKE_3OxSnZ6EEW5GQGkig&_nc_ss=8&oh=00_AfwXJIzGYM98gq9Qruv8TyYGTyPKPHMahsB09ADsRcgLLg&oe=69C0616");
+    url("https://scontent.fmnl17-8.fna.fbcdn.net/v/t39.30808-6/653710890_1339243471564751_1382818684277726793_n.jpg?stp=cp6_dst-jpg_tt6&_nc_cat=107&ccb=1-7&_nc_sid=7b2446&_nc_eui2=AeGRIZJ51eY3TLJFqLRCW2zP5XDotdvE8ZvlcOi128Txm8vHdP0_Z-HS5pvQtE0oYDGnrQeI79FBmrNtJBf0xQrB&_nc_ohc=sTlp5crwfs0Q7kNvwHFRccu&_nc_oc=Adk-ko2KjBFHjSQNTm8XPoPuBaCxWo89E9SBqlD_te2Piujmsa2X05X58ajQ5wnFh4U&_nc_zt=23&_nc_ht=scontent.fmnl17-8.fna&_nc_gid=9X4kFSO2B6k8g3v4A9UY9Q&_nc_ss=8&oh=00_Afy7w0QXI1j4bY8x7bB0uB3oeoOfS3snK378wSJdwAbR4A&oe=69C06161");
   background-size:cover;
     background-position:center;
 
@@ -149,6 +147,80 @@ section{
 }
 
 
+.hero-text{
+  text-align:center;
+  margin-bottom:40px;
+}
+
+.hero-text h1{
+  color:#ff2f86;
+  font-size:clamp(32px,5vw,52px);
+  margin-bottom:10px;
+  letter-spacing:1px;
+}
+
+.hero-text p{
+  color:#444;
+  font-size:clamp(16px,2vw,20px);
+  max-width:600px;
+  margin:auto;
+  opacity:0.9;
+}
+
+body{
+  opacity:0;
+  transition:opacity 0.8s ease;
+}
+body.loaded{
+  opacity:1;
+}
+
+.hero-text{
+  opacity:0;
+  transform:translateY(20px);
+  animation:fadeUpHero 1s ease forwards;
+  animation-delay:0.3s;
+}
+
+@keyframes fadeUpHero{
+  to{
+    opacity:1;
+    transform:translateY(0);
+  }
+}
+
+
+/* LOADING SCREEN */
+#loader{
+  position:fixed;
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
+  background:#fff4e8; /* same as your bg */
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  z-index:9999;
+  transition:opacity 0.6s ease;
+}
+
+/* SPINNER */
+.spinner{
+  width:50px;
+  height:50px;
+  border:5px solid #ffd1e6;
+  border-top:5px solid #ff2f86;
+  border-radius:50%;
+  animation:spin 1s linear infinite;
+}
+
+@keyframes spin{
+  0%{ transform:rotate(0deg); }
+  100%{ transform:rotate(360deg); }
+}
+
+
 </style>
 </head>
 
@@ -176,10 +248,31 @@ reveals[i].classList.add("active");
 window.addEventListener("scroll", revealOnScroll);
 
 
+window.addEventListener("load", () => {
+  document.body.classList.add("loaded");
+});
+
+
+window.addEventListener("load", () => {
+
+  const loader = document.getElementById("loader");
+
+  loader.style.opacity = "0";
+
+  setTimeout(() => {
+    loader.style.display = "none";
+  }, 2000);
+
+});
+
 </script>
 
 
 <body>
+
+    <div id="loader">
+  <div class="spinner"></div>
+</div>
 
 <!-- NAVBAR (copy from your index.html for consistency) -->
 <div class="navbar">
@@ -198,30 +291,33 @@ window.addEventListener("scroll", revealOnScroll);
 <!-- PAGE CONTENT -->
 <section>
 
-<div class="menu" class="reveal">
+<div class="menu reveal">
 
+    <div class="hero-text">
 <h1 style="color:#ff2f86;">What’s New</h1>
 
 <h2 style="color:#ff2f86;">Check out our latest treats and best picks!</h2>
-
+</div>
 <div class="subject-card-grid">
 
 <div class="subject-card">
-<img src="gb.jpg" class="food-img" loading="lazy">
-<h3> Our Latest Endorser! ⭐</h3>
-<p>A rising tennis star, endorsing CTG's dubai chewy supply!</p>
+<img src="https://scontent.fmnl17-4.fna.fbcdn.net/v/t39.30808-6/651844883_1339166488239116_7985111219576278103_n.jpg?stp=cp6_dst-jpg_tt6&_nc_cat=105&ccb=1-7&_nc_sid=7b2446&_nc_eui2=AeEmXAowaEP55CpGEIaXJHJPV3V9wEQzVrhXdX3ARDNWuKd0RXY3Spg0fsoGD8f8rldNAKcScjgG_KiiXrOowjYh&_nc_ohc=_GOP0Zr0DaoQ7kNvwGFGriE&_nc_oc=AdnM_4zCDOiJ9FNpdUQckURXWBtHHk7AMSTewxGDG9rZSf7xBoP-opJmSNpmmYOu5M8&_nc_zt=23&_nc_ht=scontent.fmnl17-4.fna&_nc_gid=OO4g47yXAuBvISfcK-MsgQ&_nc_ss=8&oh=00_AfwGm77fx75hyGGOqf1RMnrZt8BDLDge3znUobnm9kdKng&oe=69C088CC" class="food-img" loading="lazy">
+<h3> New CTG Drop! Dubai Chewy ⭐</h3>
+<p> Dubai Chewy Mochi made with real mochi, creamy pistachio sauce and crunchy kanefi!</p>
 </div>
 
 <div class="subject-card">
-<img src="new2.jpg" class="food-img" loading="lazy">
-<h3>Limited Edition: Strawberry Yogurt 🍓</h3>
-<p>Available this month only!</p>
+<img src="https://scontent.fmnl17-5.fna.fbcdn.net/v/t39.30808-6/652823944_1340150418140723_3873893714087842897_n.jpg?_nc_cat=102&ccb=1-7&_nc_sid=7b2446&_nc_eui2=AeGJjXz8YK-S-abRs8TW0-z-LDRlfXUlyIgsNGV9dSXIiFyzAntAtJjF_kKXUbHHagW9mdz232TsSBNDf8-PXqDu&_nc_ohc=e-ny7SFcPzIQ7kNvwGbzyyX&_nc_oc=AdmSChvlJT1-g4eoRb_7XRSxo7t8Na694obOXEgFLZt_BJogfbe2D-gx_l5arZ0S5fQ&_nc_zt=23&_nc_ht=scontent.fmnl17-5.fna&_nc_gid=EwYTl8Z0FGA3DFUeXAx_xg&_nc_ss=8&oh=00_Afw1dHmPIecqzsUfI-Eso2i2GsXmYz9hEye2-Aah3MVJQg&oe=69C07365" class="food-img" loading="lazy">
+<h3> Grand Opening Treat ⭐ </h3>
+<p>Join us on March 20, 2026 as we celebrate the grand opening of Cravings to go - SM Southmall Branch! 
+</p>
+<p> ✨Exclusive for the first 50 customers! ✨</p>
 </div>
 
 <div class="subject-card">
-<img src="new3.jpg" class="food-img" loading="lazy">
-<h3>Best Seller: Biscoff Churros ⭐</h3>
-<p>Customer favorite!</p>
+<img src="https://scontent.fmnl17-3.fna.fbcdn.net/v/t39.30808-6/649281739_1335353751953723_6868638468936275702_n.jpg?stp=cp6_dst-jpg_tt6&_nc_cat=106&ccb=1-7&_nc_sid=7b2446&_nc_eui2=AeF0s_igRfneBC2iuhMYEKXAirHps6uBmwOKsemzq4GbAzbmQkT6MCdi8sdQ6qHz4V_O9sPSC-ixPcq9yLXIJb1q&_nc_ohc=KllvYG-pbgoQ7kNvwGslJPA&_nc_oc=Adl6zMaE0MTTIeMJzNSRckWodApYLE_3C6UgqfBI8chFPblzjeBUxSDoU3zCzuYKRME&_nc_zt=23&_nc_ht=scontent.fmnl17-3.fna&_nc_gid=CkxowMKYh4H9lTlr9peltQ&_nc_ss=8&oh=00_AfxyOtUS8wHvsEMIJ6t--aW8o2Q_7LD3iKwwqLksErpVdQ&oe=69C0651B" class="food-img" loading="lazy">
+<h3> CTG Spotted?? Riverpark at General Trias!⭐</h3>
+<p>Cravings To Go Foodtruck is available at TOYOTA GAZOO Racing Philippines event at riverpark Gentri Cavite.</p>
 </div>
 
 </div>
