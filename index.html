@@ -552,6 +552,7 @@ transform:translateY(0);
     }
   }
 
+
     .dropdown-content {
       left: auto;
       right: 0; /* align right to prevent cutoff */
@@ -797,6 +798,12 @@ window.addEventListener("load", () => {
 
   }, 1800);
 });
+</script>
+<script>
+function toggleMenu(){
+  const nav = document.querySelector(".nav-links");
+  nav.classList.toggle("show");
+}
 </script>
 
   <body>
