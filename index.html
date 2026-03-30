@@ -712,10 +712,46 @@ transform:translateY(-50%) translateY(0);
 
 <script>
 gsap.registerPlugin(ScrollTrigger);
-
 function initAnimations(){
 
-  // ALL CARD GRIDS
+  // 🔥 SECTION FADE (NEW - PARALLAX STYLE)
+  gsap.utils.toArray("section").forEach(section => {
+    gsap.fromTo(section, 
+      {
+        opacity: 0,
+        y: 80
+      },
+      {
+        opacity: 1,
+        y: 0,
+        duration: 1,
+        ease: "power2.out",
+        clearProps: "opacity,transform",
+        scrollTrigger: {
+          trigger: section,
+          start: "top 80%",
+          toggleActions: "play reverse play reverse"
+        }
+      }
+    );
+  });
+
+  // subtle parallax for sections
+gsap.utils.toArray("section").forEach(section => {
+  gsap.to(section, {
+    y: -30,
+    ease: "none",
+    scrollTrigger: {
+      trigger: section,
+      start: "top bottom",
+      end: "bottom top",
+      scrub: true
+    }
+  });
+});
+
+
+  // 🔥 MENU CARD GRIDS (UNCHANGED)
   gsap.utils.toArray(".subject-card-grid").forEach(grid => {
     gsap.from(grid.children, {
       opacity: 0,
@@ -733,7 +769,7 @@ function initAnimations(){
     });
   });
 
-  // TITLES
+  // 🔥 TITLES
   gsap.utils.toArray(".menu-title").forEach(title => {
     gsap.from(title, {
       opacity: 0,
@@ -748,7 +784,7 @@ function initAnimations(){
     });
   });
 
-  // CONTACT FIXED
+  // 🔥 CONTACT CARDS (kept separate for clarity)
   gsap.from("#contact .subject-card", {
     opacity: 0,
     y: 60,
@@ -762,9 +798,7 @@ function initAnimations(){
       toggleActions: "play reverse play reverse"
     }
   });
-
 }
-
   // HOVER
   document.querySelectorAll(".subject-card").forEach(card => {
     card.addEventListener("mouseenter", () => {
