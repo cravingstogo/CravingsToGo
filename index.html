@@ -1,6 +1,6 @@
   <!DOCTYPE html>
 
-  <html>
+  <html lang="en">
 
   <head>
 
@@ -15,13 +15,13 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
    <meta name="description" content="Cravings To Go — Soft Serve, Churros, Drinks and Snacks.">
-  <meta property="og:title" content="Cravings To Go">
+  <meta property="og:title" content="Cravings To Go | Churros & Frozen Yogurt">
   <meta property="og:description" content="Cravings to Go - Soft Serve, Churros, Drinks and Snacks!">
   <meta property="og:image" content="https://scontent.fmnl17-1.fna.fbcdn.net/v/t39.30808-6/611162732_1281144360707996_8600646342482524756_n.jpg?_nc_cat=101&ccb=1-7&_nc_sid=1d70fc&_nc_eui2=AeEF_BjZPmHnY654PWZtI4F7A0vjNPvyMR0DS-M0-_IxHYJX9R6fqmeUYuRkCGm8cB-_DBKzxCoPru8FKNtPU63i&_nc_ohc=ENaClJ3F6HcQ7kNvwHcpATw&_nc_oc=AdmktqhTVpvjQhSa67wn_QCkmeg6i31q9begPkKHJs6iCQR3d5XJaewcWH4cYNSRs60&_nc_zt=23&_nc_ht=scontent.fmnl17-1.fna&_nc_gid=5bhSCQsgoRDL3q2svhQA4Q&_nc_ss=8&oh=00_AfxScBMvL1-vsXwNAle2ZmUDEBMapdbo238o6Vrn57Q2zA&oe=69BC7996">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://cravingstogo.github.io/CravingsToGo/">
-
-  <title>Cravings To Go</title>
+  <meta name="keywords" content="churros las pinas, frozen yogurt bf resort, desserts las pinas">
+  <title> Cravings To Go | Churros & Frozen Yogurt</title>
 
  
   <style>
@@ -715,141 +715,6 @@ transform:translateY(-50%) translateY(0);
 
 
   </head>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
-
-<script>
-gsap.registerPlugin(ScrollTrigger);
-function initAnimations(){
-
-  // 🔥 SECTION FADE (NEW - PARALLAX STYLE)
-  gsap.utils.toArray("section").forEach(section => {
-    gsap.fromTo(section, 
-      {
-        opacity: 0,
-        y: 80
-      },
-      {
-        opacity: 1,
-        y: 0,
-        duration: 1,
-        ease: "power2.out",
-        clearProps: "opacity,transform",
-        scrollTrigger: {
-          trigger: section,
-          start: "top 80%",
-          toggleActions: "play reverse play reverse"
-        }
-      }
-    );
-  });
-
-  // subtle parallax for sections
-const isMobile = window.innerWidth < 768;
-
-if (!isMobile) {
-  gsap.utils.toArray("section").forEach(section => {
-    gsap.to(section, {
-      y: -30,
-      ease: "none",
-      scrollTrigger: {
-        trigger: section,
-        start: "top bottom",
-        end: "bottom top",
-        scrub: 0.5 // smoother + lighter
-      }
-    });
-  });
-}
-
-  // 🔥 MENU CARD GRIDS (UNCHANGED)
-  gsap.utils.toArray(".subject-card-grid").forEach(grid => {
-    gsap.from(grid.children, {
-      opacity: 0,
-      y: 80,
-      duration: 0.8,
-      stagger: 0.2,
-      ease: "power3.out",
-      immediateRender: false,
-      clearProps: "opacity,transform",
-      scrollTrigger: {
-        trigger: grid,
-        start: "top 85%",
-        toggleActions: "play reverse play reverse"
-      }
-    });
-  });
-
-  // 🔥 TITLES
-  gsap.utils.toArray(".menu-title").forEach(title => {
-    gsap.from(title, {
-      opacity: 0,
-      y: 30,
-      duration: 0.6,
-      clearProps: "opacity,transform",
-      scrollTrigger: {
-        trigger: title,
-        start: "top 85%",
-        toggleActions: "play reverse play reverse"
-      }
-    });
-  });
-
-  // 🔥 CONTACT CARDS (kept separate for clarity)
-  gsap.from("#contact .subject-card", {
-    opacity: 0,
-    y: 60,
-    duration: 0.8,
-    stagger: 0.2,
-    ease: "power3.out",
-    clearProps: "opacity,transform",
-    scrollTrigger: {
-      trigger: "#contact",
-      start: "top 85%",
-      toggleActions: "play reverse play reverse"
-    }
-  });
-}
-  // HOVER
-  document.querySelectorAll(".subject-card").forEach(card => {
-    card.addEventListener("mouseenter", () => {
-      gsap.to(card, { scale: 1.05, duration: 0.2 });
-    });
-
-    card.addEventListener("mouseleave", () => {
-      gsap.to(card, { scale: 1, duration: 0.2 });
-    });
-  });
-
-</script>
-
-<script>
-window.addEventListener("load", () => {
-  const loader = document.getElementById("loader");
-
-  setTimeout(() => {
-    loader.style.opacity = "0";
-
-    setTimeout(() => {
-      loader.style.display = "none";
-
-      // ✅ ONLY RUN ONCE HERE
-      initAnimations();
-
-      // ✅ FIX ScrollTrigger positions AFTER layout changes
-      ScrollTrigger.refresh();
-
-    }, 600);
-
-  }, 1800);
-});
-</script>
-<script>
-function toggleMenu(){
-  const nav = document.querySelector(".nav-links");
-  nav.classList.toggle("show");
-}
-</script>
 
   <body>
 <div id="loader">
@@ -1124,5 +989,161 @@ function toggleMenu(){
   <p>Las Piñas City • Philippines</p>
   </footer>
   </body>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+
+<script>
+gsap.registerPlugin(ScrollTrigger);
+function initAnimations(){
+
+  // 🔥 SECTION FADE (NEW - PARALLAX STYLE)
+  gsap.utils.toArray("section").forEach(section => {
+    gsap.fromTo(section, 
+      {
+        opacity: 0,
+        y: 80
+      },
+      {
+        opacity: 1,
+        y: 0,
+        duration: 1,
+        ease: "power2.out",
+        clearProps: "opacity,transform",
+        scrollTrigger: {
+          trigger: section,
+          start: "top 80%",
+          toggleActions: "play reverse play reverse"
+        }
+      }
+    );
+  });
+
+  // subtle parallax for sections
+const isMobile = window.innerWidth < 768;
+
+if (!isMobile) {
+  gsap.utils.toArray("section").forEach(section => {
+    gsap.to(section, {
+      y: -30,
+      ease: "none",
+      scrollTrigger: {
+        trigger: section,
+        start: "top bottom",
+        end: "bottom top",
+        scrub: 0.5 // smoother + lighter
+      }
+    });
+  });
+}
+
+  // 🔥 MENU CARD GRIDS (UNCHANGED)
+  gsap.utils.toArray(".subject-card-grid").forEach(grid => {
+    gsap.from(grid.children, {
+      opacity: 0,
+      y: 80,
+      duration: 0.8,
+      stagger: 0.2,
+      ease: "power3.out",
+      immediateRender: false,
+      clearProps: "opacity,transform",
+      scrollTrigger: {
+        trigger: grid,
+        start: "top 85%",
+        toggleActions: "play reverse play reverse"
+      }
+    });
+  });
+
+  // 🔥 TITLES
+  gsap.utils.toArray(".menu-title").forEach(title => {
+    gsap.from(title, {
+      opacity: 0,
+      y: 30,
+      duration: 0.6,
+      clearProps: "opacity,transform",
+      scrollTrigger: {
+        trigger: title,
+        start: "top 85%",
+        toggleActions: "play reverse play reverse"
+      }
+    });
+  });
+
+  // 🔥 CONTACT CARDS (kept separate for clarity)
+  gsap.from("#contact .subject-card", {
+    opacity: 0,
+    y: 60,
+    duration: 0.8,
+    stagger: 0.2,
+    ease: "power3.out",
+    clearProps: "opacity,transform",
+    scrollTrigger: {
+      trigger: "#contact",
+      start: "top 85%",
+      toggleActions: "play reverse play reverse"
+    }
+  });
+}
+  // HOVER
+  document.querySelectorAll(".subject-card").forEach(card => {
+    card.addEventListener("mouseenter", () => {
+      gsap.to(card, { scale: 1.05, duration: 0.2 });
+    });
+
+    card.addEventListener("mouseleave", () => {
+      gsap.to(card, { scale: 1, duration: 0.2 });
+    });
+  });
+
+</script>
+
+<script>
+window.addEventListener("load", () => {
+  const loader = document.getElementById("loader");
+
+  setTimeout(() => {
+    loader.style.opacity = "0";
+
+    setTimeout(() => {
+      loader.style.display = "none";
+
+      // ✅ ONLY RUN ONCE HERE
+      initAnimations();
+
+      // ✅ FIX ScrollTrigger positions AFTER layout changes
+      ScrollTrigger.refresh();
+
+    }, 600);
+
+  }, 1800);
+});
+</script>
+<script>
+function toggleMenu(){
+  const nav = document.querySelector(".nav-links");
+  nav.classList.toggle("show");
+}
+</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Restaurant",
+  "name": "Cravings To Go",
+  "image": "https://cravingstogo.github.io/CravingsToGo/CTG.jpg",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "JB Tan St. BF Resort Drive",
+    "addressLocality": "Las Piñas",
+    "addressCountry": "PH"
+  },
+  "servesCuisine": "Desserts",
+  "url": "https://cravingstogo.github.io/CravingsToGo/"
+}
+</script>
+
+
+
 
   </html>
