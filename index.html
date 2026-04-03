@@ -276,6 +276,14 @@
   box-shadow:0 10px 30px rgba(255,47,134,0.5);
   }
 
+  /* GPU Optimization */
+  .subject-card,
+   section,
+  .menu-title{
+  will-change: transform, opacity;
+  transform: translateZ(0);
+  }
+
   .price{
   font-family:"Oswald";
   font-size:22px;
@@ -737,19 +745,22 @@ function initAnimations(){
   });
 
   // subtle parallax for sections
-gsap.utils.toArray("section").forEach(section => {
-  gsap.to(section, {
-    y: -30,
-    ease: "none",
-    scrollTrigger: {
-      trigger: section,
-      start: "top bottom",
-      end: "bottom top",
-      scrub: true
-    }
-  });
-});
+const isMobile = window.innerWidth < 768;
 
+if (!isMobile) {
+  gsap.utils.toArray("section").forEach(section => {
+    gsap.to(section, {
+      y: -30,
+      ease: "none",
+      scrollTrigger: {
+        trigger: section,
+        start: "top bottom",
+        end: "bottom top",
+        scrub: 0.5 // smoother + lighter
+      }
+    });
+  });
+}
 
   // 🔥 MENU CARD GRIDS (UNCHANGED)
   gsap.utils.toArray(".subject-card-grid").forEach(grid => {
